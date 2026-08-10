@@ -2,6 +2,18 @@
 
 Hands-on Security Operations Center lab built with VMware Workstation, Wazuh, and Windows 11. The project demonstrates endpoint onboarding, Windows event collection, alert validation, and basic incident triage in an isolated virtual network.
 
+## Recruiter quick view
+
+| Area | Demonstrated outcome |
+|---|---|
+| SIEM operations | Deployed and validated Wazuh manager, indexer, dashboard, and Filebeat |
+| Endpoint onboarding | Connected and monitored a Windows 11 endpoint |
+| Alert triage | Investigated Windows logon failure Event ID `4625` |
+| Evidence handling | Produced a sanitized validation summary and incident report |
+| Lab safety | Used an isolated host-only VMware network with no production data |
+
+**Start here:** [Incident Report 001](docs/incident-report-001.md) · [Validation summary](evidence/validation-summary.txt)
+
 ## Lab architecture
 
 ```mermaid
@@ -74,11 +86,12 @@ See [Incident Report 001](docs/incident-report-001.md) for the full investigatio
 
 This repository contains no passwords, private keys, enrollment keys, personal addresses, or production data. IP addresses belong only to an isolated local lab network.
 
-## Next milestones
+## Portfolio progression
 
-- Add Sysmon telemetry to the Windows endpoint
-- Build a PowerShell execution detection scenario
-- Add a brute-force correlation rule
-- Create screenshots of the Wazuh dashboard and alert timeline
-- Add a Kali Linux attack-simulation endpoint
+The next stage of this lab is documented in [Attack-to-Detection Wazuh Lab](https://github.com/Eliran1991-sudo/Attack-to-Detection-Wazuh-Lab), which adds Sysmon telemetry, PowerShell detection, a custom Wazuh rule, controlled Kali reconnaissance, MITRE ATT&CK mapping, and deeper evidence-based triage.
 
+## Future improvements
+
+- Add sanitized screenshots of the Wazuh dashboard and alert timeline.
+- Build a multi-event brute-force correlation rule.
+- Add a second Windows endpoint to compare normal and suspicious activity.
