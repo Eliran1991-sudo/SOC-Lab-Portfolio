@@ -1,0 +1,26 @@
+Validation date: 2026-08-10
+
+WAZUH-SIEM01
+- IP: 192.168.75.20
+- Wazuh manager: active
+- Wazuh indexer: active
+- Wazuh dashboard: active
+- Filebeat: active
+- HTTPS dashboard: reachable (HTTP 200)
+
+WIN11-CLIENT
+- IP: 192.168.75.132
+- Operating system: Windows 11 Enterprise Evaluation
+- Wazuh agent ID: 001
+- Wazuh agent version: 4.14.7
+- Agent status: active
+- File Integrity Monitoring: completed
+
+Validated detections
+- Windows Event ID 4625: failed logon
+- Wazuh Rule 60122: Logon Failure - Unknown user or bad password
+- Windows Event ID 4688: process creation
+- Wazuh Rule 67027: A process was created
+
+No credentials, enrollment keys, or private keys are included in this evidence file.
+

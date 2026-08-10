@@ -1,0 +1,26 @@
+# Credentials and secrets
+*.key
+*.pem
+*.pfx
+*.p12
+*password*
+*secret*
+client.keys
+wazuh-install-files*
+
+# Virtual machine files
+*.vmdk
+*.vmem
+*.vmss
+*.vmsn
+*.vmx
+*.nvram
+*.lck
+
+# Raw logs and temporary data
+*.log
+*.tmp
+*.bak
+
+# Screenshots may be added only after manual privacy review
+evidence/screenshots/private/
