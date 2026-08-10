@@ -20,6 +20,10 @@ The Wazuh manager, indexer, and dashboard are active. Windows agent `001` is reg
 
 ![Wazuh services and active Windows endpoint](docs/images/wazuh-server-status.png)
 
+The monitored Windows endpoint also reports live Sysmon process telemetry. Both `Sysmon64` and `WazuhSvc` are configured for automatic startup and were running during collection.
+
+![Windows Sysmon event and security agent status](docs/images/windows-endpoint-evidence.png)
+
 ## Lab architecture
 
 ```mermaid
