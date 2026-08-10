@@ -14,6 +14,12 @@ Hands-on Security Operations Center lab built with VMware Workstation, Wazuh, an
 
 **Start here:** [Incident Report 001](docs/incident-report-001.md) · [Validation summary](evidence/validation-summary.txt)
 
+## Live lab evidence
+
+The Wazuh manager, indexer, and dashboard are active. Windows agent `001` is registered and reports as active on the private laboratory network.
+
+![Wazuh services and active Windows endpoint](docs/images/wazuh-server-status.png)
+
 ## Lab architecture
 
 ```mermaid
@@ -92,6 +98,6 @@ The next stage of this lab is documented in [Attack-to-Detection Wazuh Lab](http
 
 ## Future improvements
 
-- Add sanitized screenshots of the Wazuh dashboard and alert timeline.
+- Add a sanitized screenshot of the Wazuh dashboard alert timeline.
 - Build a multi-event brute-force correlation rule.
 - Add a second Windows endpoint to compare normal and suspicious activity.
