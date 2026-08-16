@@ -88,3 +88,8 @@ See [SOC Lab Inventory](docs/lab-inventory.md) for verified platform, network, a
 
 
 A controlled invalid guest-login attempt was performed against `WIN11-CLIENT`. Windows generated Security Event ID `4625`, which the Wazuh agent forwarded to the manager.
+
+## Related projects
+
+- [Attack-to-Detection Wazuh Lab](https://github.com/Eliran1991-sudo/Attack-to-Detection-Wazuh-Lab): extends this foundation with Sysmon telemetry, controlled Kali reconnaissance, a custom Wazuh rule, MITRE ATT&CK mapping, and deeper incident analysis.
+- [Incident Report Template](docs/incident-report-template.md): reusable structure for future evidence-based investigations.
