@@ -66,10 +66,12 @@ flowchart LR
 | WAZUH-SIEM01 | Verified and documented |
 | WIN11-CLIENT | Verified and documented |
 | KALI01 | Documented in the Attack-to-Detection Wazuh Lab |
-| SRV-DC01 | VM present with VMnet1 assigned; internal configuration not yet documented |
+| SRV-DC01 | DNS, Kerberos, LDAP, Global Catalog, SMB, and WinRM services verified externally; internal role configuration still requires authenticated review |
 | PFSENSE01 | VM present with NAT and VMnet1 assigned; internal configuration not yet documented |
 
 See [SOC Lab Inventory](docs/lab-inventory.md) for verified platform, network, and evidence boundaries.
+
+See [SRV-DC01 External Validation](docs/srv-dc01-validation.md) for the network service evidence and documented limitations.
 
 ## Status recorded during validation
 
