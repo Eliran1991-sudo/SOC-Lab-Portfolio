@@ -39,7 +39,7 @@ The existence and VMware network assignments of PFSENSE01 are verified. Its inte
 ## Related documentation
 
 - [Windows SOC Home Lab README](../README.md)
-- [Incident Report 001](incident-report-001.md)
+- [Incident Report 001](../incident-reports/incident-report-001.md)
 - [SRV-DC01 External Validation](srv-dc01-validation.md)
 - [Attack-to-Detection Wazuh Lab](https://github.com/Eliran1991-sudo/Attack-to-Detection-Wazuh-Lab)
 

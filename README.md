@@ -16,7 +16,7 @@ Hands-on Security Operations Center lab built with VMware Workstation, Wazuh, an
 | Lab safety | Used an isolated host-only VMware network with no production data |
 
 
-**Start here:** [Incident Report 001](docs/incident-report-001.md) · [Validation summary](evidence/validation-summary.txt)
+**Start here:** [Incident Report 001](incident-reports/incident-report-001.md) · [Validation summary](evidence/validation-summary.txt)
 
 
 ## Validated lab evidence
@@ -25,13 +25,13 @@ Hands-on Security Operations Center lab built with VMware Workstation, Wazuh, an
 At the recorded validation time on 2026-08-10, the Wazuh manager, indexer, and dashboard were active. Windows agent `001` was registered and reported as active on the private laboratory network.
 
 
-![Wazuh services and active Windows endpoint](docs/images/wazuh-server-status.png)
+![Wazuh services and active Windows endpoint](screenshots/wazuh-server-status.png)
 
 
 The recorded Windows endpoint evidence includes Sysmon process telemetry. Both `Sysmon64` and `WazuhSvc` were configured for automatic startup and were running during collection.
 
 
-![Windows Sysmon event and security agent status](docs/images/windows-endpoint-evidence.png)
+![Windows Sysmon event and security agent status](screenshots/windows-endpoint-evidence.png)
 
 
 ## Lab architecture
@@ -86,12 +86,28 @@ See [SRV-DC01 External Validation](docs/srv-dc01-validation.md) for the network 
 - Windows Security events: received and analyzed
 
 
-## Detection scenario: failed Windows logon
+## Detection scenarios
 
+| Scenario | Event ID or source | Wazuh rule | MITRE ATT&CK | Evidence boundary |
+| --- | --- | --- | --- | --- |
+| Failed Windows logon | Windows Security `4625` | `60122` | Wazuh associated `T1531`; analyst review found failed authentication, not confirmed account access removal | [Incident Report 001](incident-reports/incident-report-001.md) |
+| Windows process creation | Windows Security `4688` | `67027` | No mapping claimed in the published evidence | [Validation summary](evidence/validation-summary.txt) |
+| Authorized PowerShell simulation | Sysmon `1` | Custom rule `100100`, level `10` | `T1059.001` PowerShell | Documented in the [Attack-to-Detection Wazuh Lab](https://github.com/Eliran1991-sudo/Attack-to-Detection-Wazuh-Lab) |
+| Controlled Kali reconnaissance | Authorized Nmap scan | No Wazuh alert claimed for the scan | `T1046` Network Service Discovery | Documented in the [Attack-to-Detection Wazuh Lab](https://github.com/Eliran1991-sudo/Attack-to-Detection-Wazuh-Lab) |
 
-A controlled invalid guest-login attempt was performed against `WIN11-CLIENT`. Windows generated Security Event ID `4625`, which the Wazuh agent forwarded to the manager.
+The table separates locally published evidence from scenarios documented in the advanced repository. It does not claim that every activity generated a Wazuh alert.
+
+## Repository structure
+
+```text
+detection-rules/   Detection inventory and links to validated rule implementations
+docs/              Architecture, inventory, and system-validation documentation
+evidence/          Sanitized machine-readable validation summaries
+incident-reports/  Completed reports and a reusable report template
+screenshots/       Reviewed images used by the documentation
+```
 
 ## Related projects
 
 - [Attack-to-Detection Wazuh Lab](https://github.com/Eliran1991-sudo/Attack-to-Detection-Wazuh-Lab): extends this foundation with Sysmon telemetry, controlled Kali reconnaissance, a custom Wazuh rule, MITRE ATT&CK mapping, and deeper incident analysis.
-- [Incident Report Template](docs/incident-report-template.md): reusable structure for future evidence-based investigations.
+- [Incident Report Template](incident-reports/incident-report-template.md): reusable structure for future evidence-based investigations.
