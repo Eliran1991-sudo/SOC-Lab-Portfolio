@@ -42,6 +42,8 @@ flowchart LR
     H[Windows 11 host] --> V[VMware Workstation]
     V -->|VMnet1 192.168.75.0/24| W[WAZUH-SIEM01\nUbuntu Server\n192.168.75.20]
     V -->|VMnet1 192.168.75.0/24| C[WIN11-CLIENT\nWindows 11 Enterprise\n192.168.75.132]
+    V -->|VMnet1 LAN 192.168.75.2| P[PFSENSE01\npfSense]
+    V -->|VMware NAT WAN 192.168.93.128| P
     C -->|Wazuh agent 4.14.7| W
     W --> M[Wazuh Manager]
     W --> I[Wazuh Indexer]
@@ -56,6 +58,7 @@ flowchart LR
 |---|---|---|
 | WAZUH-SIEM01 | Ubuntu Server 24.04 LTS | Wazuh manager, indexer, dashboard, and Filebeat |
 | WIN11-CLIENT | Windows 11 Enterprise Evaluation | Monitored endpoint with Wazuh agent |
+| PFSENSE01 | pfSense virtual machine | Firewall and routing laboratory system with externally verified LAN and WAN assignments |
 | VMnet1 | Host-only virtual network | Isolated communication between lab systems |
 
 
@@ -67,11 +70,13 @@ flowchart LR
 | WIN11-CLIENT | Verified and documented |
 | KALI01 | Documented in the Attack-to-Detection Wazuh Lab |
 | SRV-DC01 | DNS, Kerberos, LDAP, Global Catalog, SMB, and WinRM services verified externally; internal role configuration still requires authenticated review |
-| PFSENSE01 | VM present with NAT and VMnet1 assigned; internal configuration not yet documented |
+| PFSENSE01 | WAN and LAN addresses, LAN management page, and interface-specific service exposure verified externally; firewall rules, NAT behavior, and internal configuration remain unverified |
 
 See [SOC Lab Inventory](docs/lab-inventory.md) for verified platform, network, and evidence boundaries.
 
 See [SRV-DC01 External Validation](docs/srv-dc01-validation.md) for the network service evidence and documented limitations.
+
+See [PFSENSE01 External Validation](docs/pfsense-validation.md) for the verified interface assignments and service exposure.
 
 ## Status recorded during validation
 
