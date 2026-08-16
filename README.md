@@ -19,16 +19,16 @@ Hands-on Security Operations Center lab built with VMware Workstation, Wazuh, an
 **Start here:** [Incident Report 001](docs/incident-report-001.md) · [Validation summary](evidence/validation-summary.txt)
 
 
-## Live lab evidence
+## Validated lab evidence
 
 
-The Wazuh manager, indexer, and dashboard are active. Windows agent `001` is registered and reports as active on the private laboratory network.
+At the recorded validation time on 2026-08-10, the Wazuh manager, indexer, and dashboard were active. Windows agent `001` was registered and reported as active on the private laboratory network.
 
 
 ![Wazuh services and active Windows endpoint](docs/images/wazuh-server-status.png)
 
 
-The monitored Windows endpoint also reports live Sysmon process telemetry. Both `Sysmon64` and `WazuhSvc` are configured for automatic startup and were running during collection.
+The recorded Windows endpoint evidence includes Sysmon process telemetry. Both `Sysmon64` and `WazuhSvc` were configured for automatic startup and were running during collection.
 
 
 ![Windows Sysmon event and security agent status](docs/images/windows-endpoint-evidence.png)
@@ -71,7 +71,7 @@ flowchart LR
 
 See [SOC Lab Inventory](docs/lab-inventory.md) for verified platform, network, and evidence boundaries.
 
-## Verified status
+## Status recorded during validation
 
 
 - Wazuh Manager 4.14.7: active
