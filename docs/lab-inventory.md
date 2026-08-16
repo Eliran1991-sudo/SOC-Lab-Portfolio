@@ -17,7 +17,7 @@ This document records the current VMware lab inventory and separates verified ev
 | WIN11-CLIENT | Windows 11 Enterprise Evaluation | VMnet1 | Monitored endpoint with Wazuh agent, Sysmon, and Windows Event Logs | Verified and documented |
 | KALI01 | Kali Linux | VMnet1 | Authorized reconnaissance source for controlled lab simulations | Documented in the Attack-to-Detection Wazuh Lab |
 | SRV-DC01 | Windows Server virtual machine | VMnet1 | Active Directory and Windows Server laboratory role | External network services verified. Authenticated internal role configuration is not yet documented |
-| PFSENSE01 | pfSense virtual machine based on FreeBSD 14 | NAT and VMnet1 | Firewall and routing laboratory system | Present with network assigned. Internal firewall configuration is not yet documented |
+| PFSENSE01 | pfSense virtual machine based on FreeBSD 14 | NAT and VMnet1 | Firewall and routing laboratory system | External WAN, LAN, management-page, and service-exposure validation completed. Internal rules and routing configuration are not yet documented |
 
 ## Verified virtual hardware
 
@@ -34,13 +34,14 @@ Published evidence currently covers Wazuh services, the Windows endpoint, failed
 
 SRV-DC01 network identity and externally reachable DNS, Kerberos, LDAP, LDAPS, Global Catalog, SMB, and WinRM services were verified on 2026-08-16. This evidence is consistent with an active domain controller, but installed-role enumeration, directory objects, audit policy, and event collection still require authenticated review.
 
-The existence and VMware network assignments of PFSENSE01 are verified. Its internal firewall rules and routing behavior are not claimed as validated until separate evidence is collected and published.
+PFSENSE01 interface addresses and external service exposure were validated on 2026-08-16. WAN used `192.168.93.128` on VMware NAT and LAN used `192.168.75.2` on VMnet1. The pfSense login page and DNS service were reachable only from the tested LAN side. Firewall-rule contents, DHCP configuration, routing tables, and NAT behavior were not authenticated or changed.
 
 ## Related documentation
 
 - [Windows SOC Home Lab README](../README.md)
 - [Incident Report 001](../incident-reports/incident-report-001.md)
 - [SRV-DC01 External Validation](srv-dc01-validation.md)
+- [PFSENSE01 External Validation](pfsense-validation.md)
 - [Attack-to-Detection Wazuh Lab](https://github.com/Eliran1991-sudo/Attack-to-Detection-Wazuh-Lab)
 
 ## Privacy
