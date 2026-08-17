@@ -38,7 +38,7 @@ PFSENSE01 interface addresses and external service exposure were validated on 20
 
 ## Related documentation
 
-- [Windows SOC Home Lab README](../README.md)
+- [Wazuh SOC Lab README](../README.md)
 - [Incident Report 001](../incident-reports/incident-report-001.md)
 - [SRV-DC01 External Validation](srv-dc01-validation.md)
 - [PFSENSE01 External Validation](pfsense-validation.md)

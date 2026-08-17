@@ -1,4 +1,4 @@
-# Windows SOC Home Lab with Wazuh
+# Wazuh SOC Lab
 
 
 Hands-on Security Operations Center lab built with VMware Workstation, Wazuh, and Windows 11. The project demonstrates endpoint onboarding, Windows event collection, alert validation, and basic incident triage in an isolated virtual network.
